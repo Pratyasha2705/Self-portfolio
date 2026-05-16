@@ -20,20 +20,28 @@ app.post("/send", async (req, res) => {
     const { name, email, message } = req.body;
 
     const transporter = nodemailer.createTransport({
+
       host: "smtp.gmail.com",
       port: 465,
       secure: true,
+
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
       }
+
     });
 
     await transporter.sendMail({
+
       from: process.env.EMAIL_USER,
+
       to: process.env.EMAIL_USER,
+
       replyTo: email,
+
       subject: `Portfolio Message from ${name}`,
+
       text: `
 Name: ${name}
 
@@ -48,13 +56,15 @@ ${message}
 
   } catch (error) {
 
-    console.log("MAIL ERROR:", error);
+    console.log(error);
 
-    res.status(500).send("Error sending mail");
+    res.status(500).send("Mail Failed");
   }
 
 });
 
-app.listen(3000, () => {
-  console.log("Server Running on port 3000");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on ${PORT}`);
 });
