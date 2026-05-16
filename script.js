@@ -26,15 +26,25 @@ form.addEventListener("submit", async (e) => {
 
     const result = await response.text();
 
-    alert(result);
+    console.log(result);
 
-    form.reset();
+    if (response.ok) {
+
+      alert("Message Sent ✅");
+
+      form.reset();
+
+    } else {
+
+      alert("Failed: " + result);
+
+    }
 
   } catch (error) {
 
-    alert("Message failed");
-
     console.log(error);
+
+    alert("Message failed");
 
   }
 
