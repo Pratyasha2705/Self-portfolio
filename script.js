@@ -1,3 +1,4 @@
+console.log("Script Loaded");
 const form = document.querySelector(".contact-form");
 
 form.addEventListener("submit", async (e) => {
