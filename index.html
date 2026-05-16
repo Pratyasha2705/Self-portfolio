@@ -40,7 +40,6 @@
         <img src="assets/profile.jpg" alt="Profile" class="profile-img">
       
         <h1>Pratyasha Panda</h1>
-        <h1>Pratyasha Panda</h1>
   
         <h2>Full Stack Developer | Web Developer</h2>
   
@@ -280,11 +279,12 @@
 
 </section>
 
-<!-- CONTACT SECTION -->
-
 <section class="contact" id="contact">
 
-  <h2>Contact Me</h2>
+  <div class="section-title">
+    <h2>Contact Me</h2>
+    <p>Let's work together</p>
+  </div>
 
   <div class="contact-container">
 
@@ -308,15 +308,43 @@
 
     </div>
 
-    <form class="contact-form">
+    <form
+      class="contact-form"
+      action="https://formsubmit.co/pratyashapanda2004@gmail.com"
+      method="POST"
+    >
 
-      <input type="text" placeholder="Your Name" required>
+      <input type="hidden" name="_captcha" value="false">
 
-      <input type="email" placeholder="Your Email" required>
+      <input
+        type="hidden"
+        name="_next"
+        value="https://self-portfolio-gray.vercel.app/"
+      >
 
-      <textarea placeholder="Your Message"></textarea>
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+      >
 
-      <button type="submit">Send Message</button>
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+      >
+
+      <textarea
+        name="message"
+        placeholder="Your Message"
+        required
+      ></textarea>
+
+      <button type="submit">
+        Send Message
+      </button>
 
     </form>
 
