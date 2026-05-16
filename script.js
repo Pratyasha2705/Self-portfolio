@@ -12,7 +12,7 @@ form.addEventListener("submit", async (e) => {
 
   try {
 
-    const response = await fetch("https://self-portfolio-02co.onrender.com", {
+    const response = await fetch("https://self-portfolio-02co.onrender.com/send", {
 
       method: "POST",
 
